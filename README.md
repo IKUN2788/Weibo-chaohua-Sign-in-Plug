@@ -1,4 +1,5 @@
 # 微博超话一键签到（插件版）
+<img width="775" height="1098" alt="image" src="https://github.com/user-attachments/assets/913774a8-904e-4eff-b360-f943cabe8b8c" />
 
 纯前端浏览器扩展（Manifest V3）：登录后可一键遍历并签到你关注的所有微博超话，支持每日定时自动签到、补签检查与签到状态分析，内置可视化日志与统计信息。无需后端服务，所有数据仅保存在本地。
 
