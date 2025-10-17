@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "微博超话一键签到（插件版）",
+  "version": "0.2.0",
+  "description": "纯前端扩展：登录后每日定时自动签到，支持补签与状态分析。",
+  "action": {
+    "default_title": "微博超话一键签到",
+    "default_popup": "popup.html"
+  },
+  "permissions": ["storage", "alarms", "scripting", "tabs"],
+  "host_permissions": [
+    "https://m.weibo.cn/*",
+    "https://passport.weibo.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}

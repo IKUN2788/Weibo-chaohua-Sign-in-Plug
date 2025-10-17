@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>微博超话一键签到（插件版）</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>微博超话一键签到（插件版）</h1>
+
+    <section class="panel">
+      <h2>设置</h2>
+      <div class="controls" style="align-items:center;gap:12px">
+        <label><input type="checkbox" id="enableDaily"> 启用每日自动签到</label>
+        <label>执行时间：<input id="dailyTime" type="time" value="09:00"></label>
+        <button id="saveSettingsBtn">保存设置</button>
+      </div>
+      <div class="status-row">
+        <span>下次执行时间：</span>
+        <span id="nextRunText" class="status status-warn">未设置</span>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>登录管理</h2>
+      <div class="controls">
+        <button id="openLoginBtn">打开登录页面</button>
+        <button id="checkLoginBtn">检查登录</button>
+        <button id="clearStorageBtn" class="danger">清除缓存</button>
+      </div>
+      <div class="status-row">
+        <span>登录状态：</span>
+        <span id="loginStatus" class="status status-bad">未登录</span>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>签到管理</h2>
+      <div class="controls">
+        <button id="autoCheckinBtn">一键自动签到</button>
+        <button id="analyzeBtn">分析签到状态</button>
+        <button id="stopBtn" class="warning" disabled>停止</button>
+      </div>
+      <div id="progress" class="progress hidden">正在执行，请稍候...</div>
+    </section>
+
+    <section class="panel">
+      <h2>签到统计</h2>
+      <div class="stats">
+        <div>总超话数量：<span id="statTotal">0</span></div>
+        <div>已签到数量：<span id="statChecked">0</span></div>
+        <div>新签到数量：<span id="statNew">0</span></div>
+        <div>签到失败数量：<span id="statFailed">0</span></div>
+        <div>签到完成率：<span id="statRate">0.0%</span></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>超话列表</h2>
+      <div class="table-wrap">
+        <table id="topicsTable">
+          <thead>
+            <tr>
+              <th>超话名称</th>
+              <th>签到状态</th>
+              <th>等级信息</th>
+              <th>操作结果</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>日志信息</h2>
+      <textarea id="log" rows="10" readonly></textarea>
+    </section>
+
+    <footer class="footer-note" id="previewNote" hidden>
+      预览模式：不调用浏览器扩展接口，界面仅供查看。
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+  </body>
+</html>
